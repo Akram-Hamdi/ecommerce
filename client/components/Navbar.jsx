@@ -26,11 +26,13 @@ export default function Navbar() {
                     </span>
                 </div>
                 <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                    <a className="mr-5 hover:text-gray-900">Home</a>
+                    <span className="mr-5 hover:text-gray-900">
+                        <Link href={'/'}>Home</Link>
+                    </span>
                     <a className="mr-5 hover:text-gray-900">Shop</a>
                     <a className="mr-5 hover:text-gray-900">Panier</a>
                     <a className="mr-5 hover:text-gray-900">Contact</a>
-                    <input type="text" placeholder="Search..." style={{ border: '.5px solide' }} className='flex' />
+                    <input type="text" placeholder="Search..." style={{ border: '.5px solid' }} className='border-gray-500 p-1 rounded-md' />
                 </nav>
                 <span className="ml-3 cursor-pointer">
                     <Link href={'/login'}>

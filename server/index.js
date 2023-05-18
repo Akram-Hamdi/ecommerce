@@ -10,6 +10,7 @@ const app = require('express')(),
     cookieParser = require('cookie-parser')(),
     { PORT = 3000 } = process.env
 
-
+mongoose.connect(process.env.DATABASE_URL)
 app.use(bodyParser,morgan,cors,cookieParser)
+app.use('/auth', require('./controllers'))
 app.listen(PORT)
