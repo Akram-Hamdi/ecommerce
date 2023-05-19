@@ -1,158 +1,56 @@
-export default function shop() {
+export default function products(data) {
+    const colors = ['red', 'blue', 'orange', 'grey', 'green']
+    const sizes = ['SM', 'S', 'M', 'ML', 'X']
     return (
-        <>
-            <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap -m-4">
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/420x260"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The Catalyzer
-                                </h2>
-                                <p className="mt-1">$16.00</p>
-                            </div>
+      <>
+        <section className="text-gray-600 body-font">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="flex flex-wrap -m-4">
+              {
+                Object.keys(data).map((title, i) => {
+                  return (
+                    <div key={i} className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md rounded cursor-pointer hover:scale-105 hover:shadow-lg mr-5">
+                      <a className="block relative h-48 rounded overflow-hidden">
+                        <img
+                          alt="ecommerce"
+                          className="object-cover object-center w-full h-full block"
+                          src={data[title].image}
+                        />
+                      </a>
+                      <div className="mt-4">
+                        <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                          {data[title].category}
+                        </h3>
+                        <h2 className="text-gray-900 title-font text-lg font-medium">
+                          {data[title].title}
+                        </h2>
+                        <div className="flex">
+                          {
+                            colors.map((e, products) =>
+                              (data[title].color.includes(e))
+                                ? <div key={products} className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none" style={{ backgroundColor: e }}></div>
+                                : ''
+                            )
+                          }
                         </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/421x261"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Shooting Stars
-                                </h2>
-                                <p className="mt-1">$21.15</p>
-                            </div>
+                        <div>
+                          <p className="mt-1">${data[title].price}</p>
+                          <span>Qty: {data[title].qty}</span>
                         </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/422x262"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Neptune
-                                </h2>
-                                <p className="mt-1">$12.00</p>
-                            </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/423x263"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The 400 Blows
-                                </h2>
-                                <p className="mt-1">$18.40</p>
-                            </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/424x264"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The Catalyzer
-                                </h2>
-                                <p className="mt-1">$16.00</p>
-                            </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/425x265"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Shooting Stars
-                                </h2>
-                                <p className="mt-1">$21.15</p>
-                            </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/427x267"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Neptune
-                                </h2>
-                                <p className="mt-1">$12.00</p>
-                            </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/428x268"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The 400 Blows
-                                </h2>
-                                <p className="mt-1">$18.40</p>
-                            </div>
-                        </div>
+                      </div>
                     </div>
-                </div>
-            </section>
-
-
-        </>
+                  )
+                })
+              }
+            </div>
+          </div>
+        </section>
+      </>
     )
-}
+  }
+  export const getServerSideProps = async () => {
+    const data = await fetch('http://localhost:5000/api/getProducts').then(res => res.json())
+    return {
+      props: data
+    }
+  }

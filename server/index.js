@@ -13,4 +13,5 @@ const app = require('express')(),
 mongoose.connect(process.env.DATABASE_URL)
 app.use(bodyParser,morgan,cors,cookieParser)
 app.use('/auth', require('./controllers'))
+app.use('/api', require('./controllers'))
 app.listen(PORT)
