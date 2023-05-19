@@ -10,15 +10,15 @@ export default function Footer() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        className="w-10 h-10 text-white p-2 bg-amber-500 rounded-full"
+                        className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
                         viewBox="0 0 24 24"
                     >
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
-                    <span className="ml-3 text-xl">Ecommerce</span>
+                    <span className="ml-3 text-xl">ITech</span>
                 </div>
                 <div className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                    © 2020 Ecommerce —
+                    © 2023 ITech —
                     <a
                         href="https://twitter.com/knyttneve"
                         className="text-gray-600 ml-1"

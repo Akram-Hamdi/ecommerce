@@ -8,7 +8,7 @@ const app = require('express')(),
     }),
     mongoose = require('mongoose'),
     cookieParser = require('cookie-parser')(),
-    { PORT = 3000 } = process.env
+    { PORT = 5000 } = process.env
 
 mongoose.connect(process.env.DATABASE_URL)
 app.use(bodyParser,morgan,cors,cookieParser)

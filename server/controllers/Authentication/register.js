@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken') 
 const User = require('../../model/User')
 const validate= require('../../validation/Authentication/register')
-const sendres = (type, text, res) => res.json({ status: type, message: text })
+const sendRes = (type, text, res) => res.json({ status: type, message: text })
 
 const register = async (req, res) => { 
     const invalid = validate(req.body)
@@ -35,6 +35,6 @@ const register = async (req, res) => {
     await saveUser.save()
 
     res.cookie(process.env.REFRESH_COOKIE_NAME, RefreshToken, cookieOptions) 
-    return res.json({ status: 1, message: 'User has been registered', AccessToken })
+    return res.json({ status: 1, message: 'User has been registered', AccessToken})
 }
 module.exports = register

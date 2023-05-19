@@ -1,6 +1,11 @@
 import Link from "next/link"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AuthenticationContext, NotificationContext } from "./_app"
+import { useRouter } from "next/router"
 export default function Login() {
+    const router = useRouter()
+    const {setNType,setNMsg} = useContext(NotificationContext)
+    const {setAccessToken,setUsername} = useContext(AuthenticationContext)
     const [values, setValues] = useState({ email: '', password: '' })
     const handleInputs = e => {
         const { value, name } = e.target
@@ -16,6 +21,15 @@ export default function Login() {
             }
         })
         const data = await res.json()
+        if (!data.status) {
+            setNType('error')
+            return setNMsg(data.message)
+        }
+        setNType('success')
+        setNMsg(data.message)
+        setAccessToken(data.AccessToken)
+        setUsername(values.username)
+        router.push('/')
 
     }
     return (
@@ -92,6 +106,8 @@ export default function Login() {
 
                 </div>
             </div>
+            <br />
+            <br /><br />
         </>
     )
 }

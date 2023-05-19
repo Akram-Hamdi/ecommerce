@@ -1,6 +1,11 @@
 import Link from "next/link"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AuthenticationContext, NotificationContext } from "./_app"
+import { useRouter } from "next/router"
 export default function Register() {
+    const router = useRouter()
+    const {setNType,setNMsg} = useContext(NotificationContext)
+    const {setAccessToken,setUsername} = useContext(AuthenticationContext)
     const [values, setValues] = useState({ username: '', email: '', password: '' })
     const handleInputs = e => {
         const { value, name } = e.target
@@ -16,7 +21,15 @@ export default function Register() {
             }
         })
         const data = await res.json()
-
+        if(!data.status) {
+            setNType('error')
+            return setNMsg(data.message)
+        }
+        setNType('success')
+        setNMsg(data.message)
+        setAccessToken(data.AccessToken)
+        setUsername(values.username)
+        router.push('/')
     }
     return (
         <>
