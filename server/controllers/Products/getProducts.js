@@ -1,9 +1,9 @@
 const ProductSchema = require('../../model/Products')
 const getProducts = async (req, res) => {
-    const data = await ProductSchema.find()
-    let sortedData = {}
-    let HighestQtyData = []
-    data.forEach(e => {
+    const data = await ProductSchema.find();
+    let sortedData = {};
+    let HighestQtyData = [];
+    data.forEach((e) => {
         if (e.qty > 0) {
             if (e.title in sortedData) {
                 HighestQtyData.push({ slug: e.slug, qty: e.qty, image: e.image, des: e.des, price: e.price })
@@ -16,13 +16,19 @@ const getProducts = async (req, res) => {
                 if (!sortedData[e.title].color.includes(e.color)) sortedData[e.title].color.push(e.color)
                 if (!sortedData[e.title].size.includes(e.size)) sortedData[e.title].size.push(e.size)
             } else {
-                sortedData[e.title] = JSON.parse(JSON.stringify(e))
-                sortedData[e.title].color = [e.color]
-                sortedData[e.title].size = [e.size]
-                HighestQtyData.push({ slug: e.slug, qty: e.qty, image: e.image, des: e.des, price: e.price })
+                sortedData[e.title] = JSON.parse(JSON.stringify(e));
+                sortedData[e.title].color = [e.color];
+                sortedData[e.title].size = [e.size];
+                HighestQtyData.push({
+                    slug: e.slug,
+                    qty: e.qty,
+                    image: e.image,
+                    des: e.des,
+                    price: e.price,
+                });
             }
         }
-    })
-    res.json(sortedData)
-}
-module.exports = getProducts
+    });
+    res.json(sortedData);
+};
+module.exports = getProducts;

@@ -36,6 +36,10 @@ const ProductSchema = mongoose.Schema({
     category: {
         type: String,
         required: true
-    }
+    },
+    isModifiable: {
+        type: Boolean,
+        default: true,
+    },
 }, { timestamps: true })
-module.exports = mongoose.model('products', ProductSchema)
+module.exports = mongoose.model('products', ProductSchema);
