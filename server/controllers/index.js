@@ -8,6 +8,8 @@ const getCart = require("./admin/getCart");
 const addPersonnel = require("./admin/addPersonnel");
 const getPersonnel = require("./admin/getPersonnel");
 const deletePersonnel = require("./admin/deletePersonnel");
+const modifyPersonnel = require("./admin/modifyPersonnel"); 
+
 // Authentication
 const { register, login, renewToken, logout } = require("./imports");
 router.post("/register", register);
@@ -28,5 +30,7 @@ router.get("/getCart/", getCart);
 router.post("/addPersonnel", addPersonnel);
 router.get("/getPersonnel", getPersonnel);
 router.delete("/deletePersonnel/:id", deletePersonnel);
+router.put("/modifyPersonnel/:id", modifyPersonnel); // Add this line
+
 
 module.exports = router;

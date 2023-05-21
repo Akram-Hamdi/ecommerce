@@ -8,13 +8,8 @@ export default function contact() {
                             width="100%"
                             height="100%"
                             className="absolute inset-0"
-                            frameBorder={0}
                             title="map"
-                            marginHeight={0}
-                            marginWidth={0}
-                            scrolling="no"
-                            src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-                            style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3277.935598975748!2d10.76957471088428!3d34.757215080066196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301d2c1f3c2991f%3A0xab7f8817c80e9617!2sISET%20Sfax!5e0!3m2!1sfr!2stn!4v1684675274719!5m2!1sfr!2stn" style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
                         />
                         <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
                             <div className="lg:w-1/2 px-6">

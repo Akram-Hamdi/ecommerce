@@ -9,10 +9,8 @@ const app = require("express")(),
   mongoose = require("mongoose"),
   cookieParser = require("cookie-parser")(),
   { PORT = 5000 } = process.env;
-const modifyProduct = require("./controllers/admin/modifyProduct");
 mongoose.connect(process.env.DATABASE_URL);
 app.use(bodyParser, morgan, cors, cookieParser);
 app.use("/auth", require("./controllers"));
 app.use("/api", require("./controllers"));
-app.put("/api/modifyProduct/:productId", modifyProduct);
 app.listen(PORT);
