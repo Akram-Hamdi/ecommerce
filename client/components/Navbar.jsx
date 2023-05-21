@@ -48,7 +48,10 @@ export default function Navbar() {
                         <Link href={'/shop'}>Shop</Link>
                     </span>
                     <span className="mr-5 hover:text-gray-900">
-                        <Link href={'/panier'}>Panier</Link>
+                        <Link href={'/Cart'}>Cart</Link>
+                    </span>
+                    <span className="mr-5 hover:text-gray-900">
+                        <Link href={'/personnel'}>perso</Link>
                     </span>
                     <span className="mr-5 hover:text-gray-900">
                         <Link href={'/contact'}>Contact</Link>

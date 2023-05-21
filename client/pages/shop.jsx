@@ -8,6 +8,17 @@ export default function Products({ data }) {
 
     const router = useRouter();
 
+
+    const handleAddToCart = async (productId) => {
+        try {
+            await axios.post('http://localhost:5000/api/addToCart', { productId });
+            router.push('/cart');
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+
     const handleDeleteProduct = async (productId) => {
         try {
             await axios.delete(`http://localhost:5000/api/deleteProduct/${productId}`);
@@ -16,6 +27,7 @@ export default function Products({ data }) {
             console.error(error);
         }
     };
+
 
     // const handleModifyProduct = async (productId) => {
     //     try {
@@ -79,6 +91,13 @@ export default function Products({ data }) {
                                         </div>
                                     </div>
                                     <div className="mt-4">
+
+                                        <button
+                                            onClick={() => handleAddToCart(product._id)}
+                                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2"
+                                        >
+                                            Add to Cart
+                                        </button>
                                         <Link href={`/modifyProduct?productId=${product._id}`}>
                                             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
                                                 Modify
