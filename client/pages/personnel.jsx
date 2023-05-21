@@ -22,9 +22,12 @@ export default function Products({ data }) {
             <div className="container mx-auto my-4">
                 <div className="flex justify-center">
                     <Link href="/AddPersonnel">
-                        <span className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Ajouter
-                        </span>
+                        <button className="group rounded-2xl h-12 w-48 bg-blue-500 font-bold text-lg
+                         text-white relative overflow-hidden " type="submit">
+                            + Add Personnel
+                            <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl">
+                            </div>
+                        </button>
                     </Link>
                 </div>
             </div>
@@ -69,7 +72,7 @@ export default function Products({ data }) {
                         })}
                     </div>
                 </div>
-                
+
             </section>
         </>
     );

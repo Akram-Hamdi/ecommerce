@@ -31,11 +31,11 @@ export default function AddPersonnel() {
             <br /><br />
             <br /><br /><br />
             <div className="flex flex-col justify-center items-center h-[100vh]">
-                <div className="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] md:max-w-[400px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-6 3xl:p-![18px] bg-white undefined">
-                    <div className="relative flex flex-row justify-between">
-                        <h4 className="text-xl font-bold text-navy-700 dark:text-gray mb-3">
-                            Ajouter un personnel
-                        </h4>
+                <div className="!z-5 relative rounded-[20px] max-w-[300px] md:max-w-[400px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-6 3xl:p-![18px] undefined">
+                    <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-blue-7s00">
+                            Add Personnel
+                        </h2>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -124,13 +124,15 @@ export default function AddPersonnel() {
                             />
                         </div>
                         <br /><br />
-                        <button
-                            className="group rounded-2xl h-12 w-48 bg-green-500 font-bold text-lg text-white relative overflow-hidden"
-                            type="submit"
-                        >
-                            Ajouter
-                            <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
-                        </button>
+                        <center>
+                            <button
+                                className="group rounded-2xl h-12 w-48 bg-green-500 font-bold text-lg text-white relative overflow-hidden"
+                                type="submit"
+                            >
+                                Ajouter
+                                <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
+                            </button>
+                        </center>
                     </form>
                 </div>
             </div>
