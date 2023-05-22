@@ -14,7 +14,6 @@ app.use(bodyParser, morgan, cors, cookieParser);
 app.use("/auth", require("./controllers"));
 app.use("/api", require("./controllers"));
 
-// Importer la méthode sendMail depuis contact.js
 const sendMail = require("./contact");
 
 app.post('/send-email', async (req, res) => {

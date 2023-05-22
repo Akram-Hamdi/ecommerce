@@ -4,7 +4,6 @@ const deleteProduct = async (req, res) => {
   const productId = req.params.productId;
 
   try {
-    // Supprimer le produit de la base de données
     await Product.findByIdAndDelete(productId);
     res.send("Le produit a été supprimé avec succès.");
   } catch (error) {

@@ -4,7 +4,6 @@ const addPersonnel = async (req, res) => {
   try {
     const { name, position, department, salary, image } = req.body;
 
-    // Create a new personnel object
     const personnel = new Personnel({
       name,
       position,
@@ -13,7 +12,6 @@ const addPersonnel = async (req, res) => {
       image,
     });
 
-    // Save the personnel to the database
     await personnel.save();
 
     res.send('Personnel added successfully');

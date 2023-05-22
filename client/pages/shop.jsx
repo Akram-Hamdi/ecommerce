@@ -59,7 +59,7 @@ export default function Products({ data }) {
               return (
                 <div
                   key={i}
-                  className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md rounded cursor-pointer hover:scale-105 hover:shadow-lg mr-5"
+                  className="lg:w-1/5 md:w-1/2 p-4 w-full shadow-md rounded cursor-pointer hover:scale-105 hover:shadow-lg mr-5"
                 >
                   <a className="block relative h-48 rounded overflow-hidden">
                     <img

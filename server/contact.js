@@ -1,6 +1,5 @@
 const nodemailer = require('nodemailer');
 
-// Configurer le transporteur de messagerie
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -9,11 +8,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Fonction pour envoyer un e-mail de contact
 async function sendMail(name, email, message) {
   const mailOptions = {
     from: 'artyprodsfax@gmail.com',
-    to: 'akramhamdi299@gmail.com',
+    to: 'fahemmohamed64@gmail.com',
     subject: 'Nouveau message de contact',
     text: `
       Nom: ${name}

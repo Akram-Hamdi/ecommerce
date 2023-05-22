@@ -17,7 +17,7 @@ router.post("/login", login);
 router.post("/renewtoken", renewToken);
 router.get("/logoutSession", logout);
 
-// Post requests
+// CRUD
 router.post("/addProducts", addProducts);
 
 router.get("/getProducts", getProducts);
@@ -30,7 +30,5 @@ router.get("/getCart/", getCart);
 router.post("/addPersonnel", addPersonnel);
 router.get("/getPersonnel", getPersonnel);
 router.delete("/deletePersonnel/:id", deletePersonnel);
-router.put("/modifyPersonnel/:id", modifyPersonnel); // Add this line
-
-
+router.put("/modifyPersonnel/:id", modifyPersonnel); 
 module.exports = router;
