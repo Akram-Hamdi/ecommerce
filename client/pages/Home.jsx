@@ -38,8 +38,10 @@ export default function Home() {
                         </a>
                     </div>
                     <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                    {/* src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" */}
+
                         <img
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
+                            src="https://m.media-amazon.com/images/I/61Pgdn8Ys-L._AC_UF1000,1000_QL80_.jpg"
                             alt="mockup"
                         />
                     </div>
